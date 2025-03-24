@@ -16,4 +16,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin -
     && ln -s /root/.composer/vendor/bin/phpstan /usr/bin/phpstan \
     && composer global require friendsofphp/php-cs-fixer \
     && ln -s /root/.composer/vendor/bin/php-cs-fixer /usr/bin/php-cs-fixer \
+    && composer global require rector/rector \
+    && ln -s /root/.composer/vendor/bin/rector /usr/bin/rector \
     && rm -Rf /root/.composer/cache
