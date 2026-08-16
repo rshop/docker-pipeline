@@ -14,8 +14,6 @@ RUN apk update \
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer \
     && curl -sSL https://github.com/phpstan/phpstan/releases/latest/download/phpstan.phar -o /usr/bin/phpstan \
     && chmod +x /usr/bin/phpstan \
-    && composer global require friendsofphp/php-cs-fixer \
-    && ln -s /root/.composer/vendor/bin/php-cs-fixer /usr/bin/php-cs-fixer \
-    && composer global require rector/rector \
-    && ln -s /root/.composer/vendor/bin/rector /usr/bin/rector \
+    && curl -sSL https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/releases/latest/download/php-cs-fixer.phar -o /usr/bin/php-cs-fixer \
+    && chmod +x /usr/bin/php-cs-fixer \
     && rm -Rf /root/.composer/cache
